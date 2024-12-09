@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'films/css/main.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-3 col-md-2">
+                <img src="{% static 'films/img/film_review.svg' %}" alt="логотип" width="150px" class="img-fluid mb-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Главная страница</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'new' %}">Добавление новой рецензии</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="col offset-3 offset-md-2">
+                <div class="container">
+                    <h2 class="mt-4">Наш сайт посвящён описаниям фильмов</h2>
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+    <title>Главная страница</title>
+{% endblock %}
+
+{% block content %}
+<h4>Описания фильмов на сайте</h4>
+{% for film in films %}
+    {% if film %}
+    <div class="card" style="width: 60rem;">
+          <div class="card-body">
+            <p class="card-title">
+              <span class="font-weight-normal">Название фильма:</span>
+              <span class="font-weight-bold h5">{{ film.name }}</span>
+            </p>
+            <p class="card-text">
+              <span class="font-weight-normal">Коротко о рецензии:</span>
+              <span class="font-italic">{{ film.description }}</span>
+            </p>
+            <p class="card-text">
+              <span class="text-underline">Рецензия на фильм:</span><br>
+              {{ film.review }}
+            </p>
+          </div>
+    </div>
+    {% else %}
+        <h2>Рецензий пока нет</h2>
+    {% endif %}
+{% endfor %}
+{% endblock %}

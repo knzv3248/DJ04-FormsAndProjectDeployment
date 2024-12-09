@@ -1,0 +1,34 @@
+{% extends 'films/layout.html' %}
+
+{% block title %}
+    <title>Добавление нового отзыва</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card-body">
+        <h4 class="mb-4">Для добавления Вашего описания заполните форму</h4>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Название фильма</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label>Описание</label>
+                {{ form.description }}
+            </div>
+            <div class="form-group">
+                <label>Отзыв</label>
+                {{ form.review }}
+            </div>
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

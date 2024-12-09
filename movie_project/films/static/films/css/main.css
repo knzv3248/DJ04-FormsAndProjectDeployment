@@ -1,0 +1,36 @@
+body {
+            overflow-x: hidden;
+        }
+aside {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.h5 {
+  font-size: 1.25rem; /* Размер шрифта h5 по умолчанию */
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.text-underline {
+  text-decoration: underline;
+  background-color: #f8f9fa;
+}
+
+.card-text {
+  margin-bottom: 1rem; /* Добавление отступа между абзацами */
+}
